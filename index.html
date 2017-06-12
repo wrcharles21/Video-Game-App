@@ -1,0 +1,84 @@
+!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Game Search</title>
+    <!-- Stylesheet to reset browser css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Link to utilize Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Script to implement jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Firebase reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <!-- Stylesheet for custom css  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--Animate.css CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Psuedo Code  
+        - Create html markup for both index and gameinfo
+        - User will be given a search box to search for a video gams information.
+        - Upon click, gameInfo will load, and game info will be displayed. 
+        - Call to spotify API will display reccomeneded music to listen to while playing that game.
+        - Call to GiantBomb will display game desc, rating, image, etc.
+        - Create form for user to write a review, and append comment below.
+     -->
+</head>
+
+<body>
+    <nav class="appName">
+        <a class="navbar navbar-brand" href="index.html">Codex Gaming</a>
+    </nav>
+    <div class="container">
+        <div class="animated fadeInUp jumbotron text-center">
+            <h1 id="siteTitle">Codex Gaming</h1>
+            <h2 class="animated fadeIn" id="siteSubTitle">Search for your favorite game!</h2>
+            <div class="row">
+                <div>
+                    <input id="gameSearch" type="text" class="form-control text-center" maxlength="50" placeholder="Ex: NBA 2k17">
+                    <button id="gameSearchBtn" type="submit" class="btn btn-default">Search</button>
+                </div>
+            </div>
+        </div>
+        <!-- Markup for GiantBomb.com API data -->
+        <div class="row">
+            <div class="col-md-4 text-center" id="gameImage"></div>
+            <div class="col-md-8">
+                <h1 id="gameTitle"></h1>
+                <h3 id="gameRating"></h3>
+                <div id="briefDesc"></div>
+                <div id="giantBombLink"></div>
+            </div>
+        </div>
+        <div class="row" id="gameDesc"></div>
+        <!-- Markup for Youtube API data -->
+        <div class="panel-heading" id="vidsTitle"></div>
+        <div class="animated fadeInUp" id="popVids"></div>        
+        <!-- Markup for user review data -->
+        <div class="userReviews panel-heading">
+            <div id="displayReviewTitle"></div>
+            <div id="displayFormName"></div>
+            <div id="displayFormComments"></div>
+            <div id="displayFormRating"></div>
+        </div>
+        <!-- Markup for user review form input -->
+        <div id="userInput">
+            <div class="panel-heading" id="formTitle"></div>
+            <div id="reviewerName"></div>
+            <div id="reviewerComments"></div>
+            <div id="reviewerRating"></div>
+            <div id="reviewerSubmitBtn"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <footer class="footer">
+        <p>All Rights Reserved. Images and information used for educational purposes.</p>
+    </footer>
+    <!-- Javascript to load after HTML -->    
+    <script src="assets/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
